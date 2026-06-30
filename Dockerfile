@@ -1,12 +1,12 @@
-FROM node:20-slim
-
-RUN apt-get update && apt-get install -y python3 make g++ git && rm -rf /var/lib/apt/lists/*
+FROM node:20-alpine
 
 WORKDIR /app
 
 COPY package.json ./
-RUN npm install --omit=dev --no-package-lock
+RUN npm install --production
 
 COPY index.js ./
+
+ENV NODE_ENV=production
 
 CMD ["node", "index.js"]
