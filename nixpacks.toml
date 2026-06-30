@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["nodejs_20", "python311", "git", "gnumake", "gcc"]
+
+[phases.install]
+cmds = ["npm install --production --legacy-peer-deps"]
+
+[start]
+cmd = "node index.js"
