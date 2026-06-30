@@ -1,8 +1,0 @@
-[phases.setup]
-aptPkgs = ["git", "python3", "make", "g++", "ca-certificates"]
-
-[phases.install]
-cmds = ["npm install --production --legacy-peer-deps"]
-
-[start]
-cmd = "node index.js"
